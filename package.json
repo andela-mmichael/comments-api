@@ -1,17 +1,23 @@
 {
   "name": "comments-api",
   "version": "0.0.1",
+  "description": "A simple comments crud api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andela-mmichael/comments_api.git"
+    },
   "scripts": {
-    "start": "nodemon server"
+    "start": "nodemon server.js"
   },
-  "main":"./bin/www",
+  "main":"server.js",
   "engines": {
-     "node": "0.10.x"
+     "node": "0.12.x"
    },
   "dependencies": {
     "express": "~4.2.0",
-    "body-parser": "~1.0.0",
+    "body-parser": "~1.0.1",
     "mongoose": "~3.8.11",
-    "nodemon": "~1.3.7"
+    "nodemon": "~1.3.7",
+    "morgan": "~1.0.0"
   }
 }
