@@ -1,9 +1,8 @@
 {
-  "name": "Movie-CRUD-API",
+  "name": "comments-api",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon server"
   },
   "main":"./bin/www",
   "engines": {
