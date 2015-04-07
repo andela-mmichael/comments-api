@@ -13,7 +13,8 @@
   // var dbName = 'commentsDB';
   // mongoose.connect('mongodb://localhost/' + dbName);
   // var development = process.env.NODE_ENV;
-  console.log(config.database.production.uri);
+  console.log(config);
+  console.log(config.database);
    mongoose.connect(config.database.production.uri);
 
 
