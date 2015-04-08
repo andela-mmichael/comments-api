@@ -8,7 +8,7 @@
 
   //Get all comments
   router
-    .get('/comments', function(req, res){
+    .get('/', function(req, res){
       Comment.find(function(err, comments){
         if(err){
           return res.send(err);
@@ -18,13 +18,14 @@
       });
     })  
     //Create new comment
-    .post('/comments', function(req, res){
+    .post('/', function(req, res){
+
       var newComment = new Comment(req.body);
       newComment.save(res.json({ message: "Your comment has been successful added."}));
       console.log("creating new comment");
     })
     //Retrieve comment
-    .get('/comments/:name', function(req, res){
+    .get('/:name', function(req, res){
       Comment.findOne({name: req.params.name}, function(err, comment){
         if(err){
           res.send(err);
@@ -34,7 +35,7 @@
       });
     })
     //Update comment
-    .put('/comments/:name', function(req, res){
+    .put('/:name', function(req, res){
       Comment.findOne({name: req.params.name}, function(err, comment){
         if(err){
           res.send(err);
@@ -49,7 +50,7 @@
       });
    })  
     //Delete comment
-    .delete('/comments/:name', function(req, res){
+    .delete('/:name', function(req, res){
       Comment.remove({name: req.params.name}, function(err, comment){
         if(err){
           res.send(err);
