@@ -1,7 +1,7 @@
   var express     = require('express');
   var bodyParser  = require('body-parser');
   var mongoose    = require('mongoose');
-  var comments    = require('./routes/comments.route'); //route for app
+  var comments    = require('./app/feature/routes/comments.route'); //route for app
   var config      = require('./config/config');         //config 
   var app         = express();    
 

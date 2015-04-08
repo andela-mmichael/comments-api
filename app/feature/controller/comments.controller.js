@@ -1,41 +1,42 @@
   var Comment = require('../models/comments.model');
   var express = require('express');
-  var router = express.Router();
+  var router  = express.Router();
 
-  module.exports = router;
+  module.exports = {
 
-/*** For /comments ROUTES  ***/
-
-  //Get all comments
-  router
-    .get('/', function(req, res){
+    getAllComments: function(req, res){
       Comment.find(function(err, comments){
         if(err){
           return res.send(err);
         }
         res.json(comments); //return all comments 
-        console.log("Getting all comments.");
+        console.log("Get all comments");
       });
-    })  
-    //Create new comment
-    .post('/', function(req, res){
+    },
 
+    getComment: function(req, res){
+      Comment.findOne({name : req.params.name}, function(err, comments){
+        if(err){
+          return res.send(err);
+        }
+        res.json(comments); //return all comments 
+        console.log("Got a comment");
+      });
+    },
+
+    postComment: function(req, res){
       var newComment = new Comment(req.body);
-      newComment.save(res.json({ message: "Your comment has been successful added."}));
-      console.log("creating new comment");
-    })
-    //Retrieve comment
-    .get('/:name', function(req, res){
-      Comment.findOne({name: req.params.name}, function(err, comment){
+      newComment.createdOn = Date.now();
+      newComment.save(function(err){
         if(err){
           res.send(err);
         }
-        res.json(comment);
-        console.log("Retrieving a comment");
+        res.json({message: "Comment successfully added!"});
+        console.log("comment posted");
       });
-    })
-    //Update comment
-    .put('/:name', function(req, res){
+    },
+
+    updateComment: function(req, res){
       Comment.findOne({name: req.params.name}, function(err, comment){
         if(err){
           res.send(err);
@@ -46,17 +47,20 @@
         }
         //save comment
         comment.save(res.json({ message: "Update successful!" }));
-        console.log("Updating comment");
+        console.log("Updated comment");
       });
-   })  
-    //Delete comment
-    .delete('/:name', function(req, res){
+    },
+
+    removeComment: function(req, res){
       Comment.remove({name: req.params.name}, function(err, comment){
         if(err){
           res.send(err);
         }
         res.json({ message: "Comment deleted!"});
-        console.log("Deleting a comment");
+        console.log("Deleted comment");
       });
-    })
+    }
+  }
 
+
+  
