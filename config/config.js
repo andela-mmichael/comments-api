@@ -7,6 +7,9 @@ module.exports = (function(){
           development: { 
             uri: 'mongodb://localhost/commentsDB' 
           },
+          testing: {
+            uri: 'mongodb://loaclhost/commentsDB-test'
+          },
           production: { 
             uri: process.env.MONGOLAB_URI 
           }

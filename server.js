@@ -1,7 +1,7 @@
   var express     = require('express');
   var bodyParser  = require('body-parser');
   var mongoose    = require('mongoose');
-  var comments    = require('./app/feature/routes/comments.route'); //route for app
+  var comments    = require('./app/comments/routes/comments.route'); //route for app
   var config      = require('./config/config');         //config 
   var app         = express();    
 
@@ -20,3 +20,4 @@
     console.log("My comments api is working here on port: ", config.port);
   });
 
+  module.exports = app;
