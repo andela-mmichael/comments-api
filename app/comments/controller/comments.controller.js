@@ -26,7 +26,6 @@
 
     postComment: function(req, res){
       var newComment = new Comment(req.body);
-      newComment.createdOn = Date.now();
       newComment.save(function(err){
         if(err){
           res.send(err);
