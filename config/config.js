@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = (function(){
+module.exports = function(){
   return {
       port: process.env.PORT || 8100,
       database: {
@@ -8,7 +8,7 @@ module.exports = (function(){
             uri: 'mongodb://localhost/commentsDB' 
           },
           testing: {
-            uri: 'mongodb://loaclhost/commentsDB-test'
+            uri: 'mongodb://localhost/commentsDB-test'
           },
           production: { 
             uri: process.env.MONGOLAB_URI 
@@ -18,4 +18,4 @@ module.exports = (function(){
   };
 
 
-})();
+};
