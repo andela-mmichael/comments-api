@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "test": "export NODE_ENV=testing && jasmine-node tests/comments/*.js --autotest --watch --color"
+    "test": "NODE_ENV=testing && jasmine-node tests/comments/*.js --autotest --watch --color"
   },
   "main": "server.js",
   "engines": {
