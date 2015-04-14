@@ -17,7 +17,7 @@
 
   //connect to port
   app.listen(config.port, function(){
-    console.log("My comments api is working here on port: ", config.port);
+    console.log("Comments API is working here on port: ", config.port);
   });
 
   module.exports = app;

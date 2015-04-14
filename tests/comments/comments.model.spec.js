@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var CommentModel = require('../../app/comments/models/comments.model');
-var config = require('../../config/config')();
+var config = require('../../config/config');
 
 mongoose.connect(config.database[process.env.NODE_ENV].uri); //Connect to database
 

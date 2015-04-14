@@ -10,7 +10,6 @@
           return res.send(err);
         }
         res.json(comments); //return all comments 
-        console.log("Get all comments");
       });
     },
 
@@ -20,7 +19,6 @@
           return res.send(err);
         }
         res.json(comments); //return all comments 
-        console.log("Got a comment");
       });
     },
 
@@ -31,8 +29,6 @@
           res.send(err);
         }
         res.json({message: "Comment successfully added!"});
-        console.log("comment posted");
-      });
     },
 
     updateComment: function(req, res){
@@ -46,7 +42,6 @@
         }
         //save comment
         comment.save(res.json({ message: "Update successful!" }));
-        console.log("Updated comment");
       });
     },
 
@@ -56,7 +51,6 @@
           res.send(err);
         }
         res.json({ message: "Comment deleted!"});
-        console.log("Deleted comment");
       });
     }
   }
