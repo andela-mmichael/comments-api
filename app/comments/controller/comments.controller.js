@@ -10,7 +10,6 @@
           return res.send(err);
         }
         res.json(comments); //return all comments 
-        console.log("Get all comments");
       });
     },
 
@@ -20,19 +19,16 @@
           return res.send(err);
         }
         res.json(comments); //return all comments 
-        console.log("Got a comment");
       });
     },
 
     postComment: function(req, res){
       var newComment = new Comment(req.body);
-      newComment.createdOn = Date.now();
       newComment.save(function(err){
         if(err){
           res.send(err);
         }
         res.json({message: "Comment successfully added!"});
-        console.log("comment posted");
       });
     },
 
@@ -47,7 +43,6 @@
         }
         //save comment
         comment.save(res.json({ message: "Update successful!" }));
-        console.log("Updated comment");
       });
     },
 
@@ -57,7 +52,6 @@
           res.send(err);
         }
         res.json({ message: "Comment deleted!"});
-        console.log("Deleted comment");
       });
     }
   }
