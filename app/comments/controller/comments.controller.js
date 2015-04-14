@@ -29,6 +29,7 @@
           res.send(err);
         }
         res.json({message: "Comment successfully added!"});
+      });
     },
 
     updateComment: function(req, res){
