@@ -1,5 +1,5 @@
 {
-  "name": "comments-api",
+  "name": "comments-service",
   "version": "0.0.1",
   "description": "A simple comments crud api",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/andela-mmichael/comments_api.git"
   },
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon index.js",
     "test": "NODE_ENV=testing && jasmine-node tests/comments/*.js --autotest --watch --color"
   },
   "main": "server.js",
