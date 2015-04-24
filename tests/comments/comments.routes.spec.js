@@ -1,4 +1,4 @@
-var app = require('../../server');
+refvar app = require('../../server');
 var CommentModel = require('../../app/comments/models/comments.model')
 var request = require('supertest');
 var mongoose = require('mongoose');

@@ -1,4 +1,4 @@
-# Comments_api
+# Comments-service
 
-  A simple comment service.
+  A simple comment service for HacksHub project.
 
